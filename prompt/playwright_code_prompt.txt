@@ -1,0 +1,131 @@
+Analyze the provided JSON history of browser interactions and generate Playwright TypeScript code that exactly replicates the workflow. The code must follow these strict requirements:
+
+1. Code Organization and Structure:
+   - Use TypeScript with proper type annotations
+   - Create a single test flow that matches the sequence in history.json
+   - Include all necessary imports (playwright, faker for test data)
+   - Use descriptive test names that reflect the workflow
+   - Break down complex actions into commented sections
+   - Follow consistent code formatting and organization
+
+2. Locator Strategy (in priority order):
+   a. Role-based locators with specific attributes
+      - Example: getByRole('button', { name: 'Submit' })
+   b. Label-based locators for form fields
+      - Example: getByLabel('First Name')
+   c. Element IDs
+      - Use page.locator('#elementId') for elements with IDs
+   d. Text-based locators with exact matching
+      - Example: getByText('Submit', { exact: true })
+   e. CSS selectors (only when above options aren't available)
+      - Use parent-child relationships for ambiguous elements
+      - Example: page.locator('.form-section').getByRole('button')
+
+3. Navigation and Waiting:
+   - Use context.waitForEvent('page') for new page loads
+   - Utilize Playwright's auto-waiting features
+   - Never use arbitrary timeouts or sleeps
+   - Handle page transitions properly
+   - Example:
+     ```typescript
+     const newPage = await context.waitForEvent('page');
+     await newPage.waitForLoadState('networkidle');
+     ```
+
+4. Data Input and Validation:
+   - Use faker.js for generating realistic test data
+   - Maintain data consistency throughout the workflow
+   - For assertions:
+     * ONLY add assertions that can be directly derived from the history.json data
+     * Do not assume presence of success messages or specific UI elements unless explicitly shown in the history
+     * If no clear validation points exist in the history, limit to basic existence/visibility checks of interacted elements
+     * Example:
+     ```typescript
+     const firstName = faker.person.firstName();
+     await page.getByLabel('First Name').fill(firstName);
+     // Only assert what we can verify from the history
+     await expect(page.getByLabel('First Name')).toHaveValue(firstName);
+     ```
+
+5. Error Handling and Reliability:
+   - Include try-catch blocks for potential failures
+   - Add retry logic for flaky operations
+   - Use proper assertion timeouts
+   - Handle potential alert/dialog popups
+   - Example:
+     ```typescript
+     try {
+       // Only use assertions based on actual history data
+       await expect(page.locator('#someElement')).toBeVisible({ timeout: 2000 });
+     } catch (e) {
+       console.log('Handling error:', e);
+     }
+     ```
+
+3. Element Selection Strategy:
+   - When generating locators, analyze ALL available attributes in the history.json
+   - Ignore attributes that appear to be dynamic or random (e.g., random-looking IDs, auto-generated classes)
+     * Skip attributes that look like random strings (e.g., id="APjFqb", data-id="xyz123")
+     * Skip auto-generated class names (e.g., class="MuiButton-root-123")
+     * Skip any attribute values that contain random-looking numbers or hashes
+   - If multiple attributes are available (role, type, name, aria-label, id, class), combine the stable ones for unique identification
+   - Priority order for attributes:
+     1. Semantic attributes (role, type, name, aria-label)
+     2. Stable, predictable IDs (e.g., 'submit-button', 'login-form')
+     3. CSS selectors with multiple stable attributes
+   - Example:
+     ```typescript
+     // DON'T - Using random/dynamic ID
+     page.locator('#APjFqb')
+     
+     // DO - Use stable, semantic attributes instead
+     page.locator('input[name="q"][type="text"][aria-label="Search"]')
+     ```
+
+   - When dealing with complex selectors from history.json:
+     ```json
+     {
+       "css_selector": "input[id=\"APjFqb\"][aria-label=\"Google Search\"][name=\"q\"][role=\"combobox\"]"
+     }
+     ```
+     Transform into Playwright locator by removing random attributes:
+     ```typescript
+     // Remove the random ID "APjFqb" and keep stable attributes
+     page.locator('input[aria-label="Google Search"][name="q"][role="combobox"]')
+     ```
+
+4. Handling Multiple Matches:
+   - Always check if the element might have duplicates in the DOM
+   - Use the most specific combination of attributes possible
+   - Consider using nth-match or first/last if multiple elements are expected
+   - Example:
+     ```typescript
+     // If multiple matches are possible but we want a specific one
+     page.locator('input[name="btnK"][role="button"]').first()
+     // Or use nth if specific index is known
+     page.locator('input[name="btnK"][role="button"]').nth(0)
+     ```
+
+Here is the expected code format:
+```typescript
+import { test, expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
+
+test('descriptive test name for the workflow', async ({ page, context }) => {
+    // 1. Initial Navigation
+    await page.goto('url', { waitUntil: 'networkidle' });
+    
+    // 2. Form Interaction
+    const userData = {
+        firstName: faker.person.firstName(),
+        email: faker.internet.email()
+    };
+    await page.getByLabel('First Name').fill(userData.firstName);
+    
+    // 3. Basic Validation (only if verifiable from history)
+    await expect(page.getByLabel('First Name')).toHaveValue(userData.firstName);
+});
+```
+
+Here is the json file content:
+{json_file_content}

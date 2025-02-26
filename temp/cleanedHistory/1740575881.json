@@ -1,0 +1,883 @@
+{
+  "history": [
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Unknown - I don't know if the browser started successfully.",
+          "memory": "Starting with the new task. I have completed 0/10 steps",
+          "next_goal": "Go to the website http://localhost:3001"
+        },
+        "action": [
+          {
+            "go_to_url": {
+              "url": "http://localhost:3001"
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\udd17  Navigated to http://localhost:3001",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "about:blank",
+            "title": ""
+          }
+        ],
+        "interacted_element": [
+          null
+        ],
+        "url": "about:blank",
+        "title": ""
+      },
+      "metadata": {
+        "step_start_time": 1740575881.8919098,
+        "step_end_time": 1740575888.9941685,
+        "input_tokens": 2616,
+        "step_number": 2
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - I navigated to the website.",
+          "memory": "Starting with the new task. I have completed 1/10 steps",
+          "next_goal": "Select Auto Insurance from the dropdown."
+        },
+        "action": [
+          {
+            "select_dropdown_option": {
+              "index": 5,
+              "text": "Auto Insurance"
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "selected option Auto Insurance with value ['auto']",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          {
+            "tag_name": "select",
+            "xpath": "html/body/div/div/main/div/div/form/div/select",
+            "highlight_index": 5,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "select"
+            ],
+            "attributes": {
+              "class": "form-input",
+              "required": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > select.form-input[required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          }
+        ],
+        "url": "http://localhost:3001/",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575888.9946184,
+        "step_end_time": 1740575899.212093,
+        "input_tokens": 2940,
+        "step_number": 3
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - Selected Auto Insurance.",
+          "memory": "Starting with the new task. I have completed 2/10 steps",
+          "next_goal": "Click on Start Your Quote button."
+        },
+        "action": [
+          {
+            "click_element": {
+              "index": 6
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 6: Start Your Quote",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          {
+            "tag_name": "button",
+            "xpath": "html/body/div/div/main/div/div/form/button",
+            "highlight_index": 6,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "button"
+            ],
+            "attributes": {
+              "type": "submit",
+              "class": "btn-primary w-full"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > button.btn-primary.w-full[type=\"submit\"]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          }
+        ],
+        "url": "http://localhost:3001/",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575899.212887,
+        "step_end_time": 1740575905.4368424,
+        "input_tokens": 3081,
+        "step_number": 4
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - I clicked the start your quote button",
+          "memory": "Starting with the new task. I have completed 3/10 steps",
+          "next_goal": "Fill personal information."
+        },
+        "action": [
+          {
+            "input_text": {
+              "index": 5,
+              "text": "John"
+            }
+          },
+          {
+            "input_text": {
+              "index": 6,
+              "text": "Doe"
+            }
+          },
+          {
+            "input_text": {
+              "index": 7,
+              "text": "john.doe@example.com"
+            }
+          },
+          {
+            "click_element": {
+              "index": 8
+            }
+          },
+          {
+            "click_element": {
+              "index": 10
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input John into index 5",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input Doe into index 6",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input john.doe@example.com into index 7",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 8: ",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 10: Continue",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/personal-info",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div/div/input",
+            "highlight_index": 5,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "text",
+              "name": "firstName",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > div > input.form-input[type=\"text\"][name=\"firstName\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div/div[2]/input",
+            "highlight_index": 6,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "text",
+              "name": "lastName",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > div:nth-of-type(2) > input.form-input[type=\"text\"][name=\"lastName\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[2]/input",
+            "highlight_index": 7,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "email",
+              "name": "email",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(2) > input.form-input[type=\"email\"][name=\"email\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[3]/div/label/input",
+            "highlight_index": 8,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "label",
+              "input"
+            ],
+            "attributes": {
+              "type": "radio",
+              "name": "gender",
+              "class": "mr-2",
+              "required": "",
+              "value": "male"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(3) > div > label > input.mr-2[type=\"radio\"][name=\"gender\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "button",
+            "xpath": "html/body/div/div/main/div/div/form/button",
+            "highlight_index": 10,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "button"
+            ],
+            "attributes": {
+              "type": "submit",
+              "class": "btn-primary w-full"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > button.btn-primary.w-full[type=\"submit\"]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          }
+        ],
+        "url": "http://localhost:3001/personal-info",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575905.4378612,
+        "step_end_time": 1740575920.7363489,
+        "input_tokens": 3240,
+        "step_number": 5
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - Filled personal information.",
+          "memory": "Starting with the new task. I have completed 3/10 steps",
+          "next_goal": "Fill address information and continue."
+        },
+        "action": [
+          {
+            "input_text": {
+              "index": 5,
+              "text": "123 Main St"
+            }
+          },
+          {
+            "input_text": {
+              "index": 7,
+              "text": "Anytown"
+            }
+          },
+          {
+            "select_dropdown_option": {
+              "index": 8,
+              "text": "California"
+            }
+          },
+          {
+            "input_text": {
+              "index": 9,
+              "text": "90210"
+            }
+          },
+          {
+            "click_element": {
+              "index": 11
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input 123 Main St into index 5",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input Anytown into index 7",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "selected option California with value ['California']",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input 90210 into index 9",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 11: Continue",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/address-info",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div/input",
+            "highlight_index": 5,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "text",
+              "name": "addressLine1",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > input.form-input[type=\"text\"][name=\"addressLine1\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[3]/div/input",
+            "highlight_index": 7,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "text",
+              "name": "city",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(3) > div > input.form-input[type=\"text\"][name=\"city\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "select",
+            "xpath": "html/body/div/div/main/div/div/form/div[3]/div[2]/select",
+            "highlight_index": 8,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "select"
+            ],
+            "attributes": {
+              "name": "state",
+              "class": "form-input",
+              "required": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(3) > div:nth-of-type(2) > select.form-input[name=\"state\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[4]/input",
+            "highlight_index": 9,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "text",
+              "name": "zipcode",
+              "pattern": "[0-9]{5}",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(4) > input.form-input[type=\"text\"][name=\"zipcode\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "button",
+            "xpath": "html/body/div/div/main/div/div/form/div[5]/button[2]",
+            "highlight_index": 11,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "button"
+            ],
+            "attributes": {
+              "type": "submit",
+              "class": "btn-primary flex-1"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(5) > button:nth-of-type(2).btn-primary.flex-1[type=\"submit\"]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          }
+        ],
+        "url": "http://localhost:3001/address-info",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575920.7376053,
+        "step_end_time": 1740575934.2122018,
+        "input_tokens": 3671,
+        "step_number": 6
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - Filled address information.",
+          "memory": "Starting with the new task. I have completed 4/10 steps",
+          "next_goal": "Fill vehicle information and continue."
+        },
+        "action": [
+          {
+            "select_dropdown_option": {
+              "index": 5,
+              "text": "Toyota"
+            }
+          },
+          {
+            "select_dropdown_option": {
+              "index": 6,
+              "text": "Camry"
+            }
+          },
+          {
+            "input_text": {
+              "index": 7,
+              "text": "2015"
+            }
+          },
+          {
+            "click_element": {
+              "index": 8
+            }
+          },
+          {
+            "click_element": {
+              "index": 12
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": false,
+          "extracted_content": "selected option Toyota with value ['Toyota']",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "selected option Camry with value ['Camry']",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\u2328\ufe0f  Input 2015 into index 7",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 8: ",
+          "include_in_memory": true
+        },
+        {
+          "is_done": false,
+          "extracted_content": "\ud83d\uddb1\ufe0f  Clicked button with index 12: Continue",
+          "include_in_memory": true
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/vehicle-info",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          {
+            "tag_name": "select",
+            "xpath": "html/body/div/div/main/div/div/form/div/div/select",
+            "highlight_index": 5,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "select"
+            ],
+            "attributes": {
+              "name": "make",
+              "class": "form-input",
+              "required": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > div > select.form-input[name=\"make\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "select",
+            "xpath": "html/body/div/div/main/div/div/form/div/div[2]/select",
+            "highlight_index": 6,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "select"
+            ],
+            "attributes": {
+              "name": "model",
+              "class": "form-input",
+              "required": "",
+              "disabled": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div > div:nth-of-type(2) > select.form-input[name=\"model\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[2]/input",
+            "highlight_index": 7,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "input"
+            ],
+            "attributes": {
+              "type": "number",
+              "name": "year",
+              "min": "1990",
+              "max": "2025",
+              "class": "form-input",
+              "required": "",
+              "value": ""
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(2) > input.form-input[type=\"number\"][name=\"year\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "input",
+            "xpath": "html/body/div/div/main/div/div/form/div[3]/div/label/input",
+            "highlight_index": 8,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "div",
+              "label",
+              "input"
+            ],
+            "attributes": {
+              "type": "radio",
+              "name": "ownership",
+              "class": "mr-2",
+              "required": "",
+              "value": "own"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(3) > div > label > input.mr-2[type=\"radio\"][name=\"ownership\"][required]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          },
+          {
+            "tag_name": "button",
+            "xpath": "html/body/div/div/main/div/div/form/div[4]/button[2]",
+            "highlight_index": 12,
+            "entire_parent_branch_path": [
+              "div",
+              "div",
+              "main",
+              "div",
+              "div",
+              "form",
+              "div",
+              "button"
+            ],
+            "attributes": {
+              "type": "submit",
+              "class": "btn-primary flex-1"
+            },
+            "shadow_root": false,
+            "css_selector": "html > body > div > div > main > div > div > form > div:nth-of-type(4) > button:nth-of-type(2).btn-primary.flex-1[type=\"submit\"]",
+            "page_coordinates": null,
+            "viewport_coordinates": null,
+            "viewport_info": null
+          }
+        ],
+        "url": "http://localhost:3001/vehicle-info",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575934.213834,
+        "step_end_time": 1740575949.2662523,
+        "input_tokens": 3830,
+        "step_number": 7
+      }
+    },
+    {
+      "model_output": {
+        "current_state": {
+          "evaluation_previous_goal": "Success - Filled vehicle information.",
+          "memory": "Starting with the new task. I have completed 5/10 steps",
+          "next_goal": "Get the quote."
+        },
+        "action": [
+          {
+            "done": {
+              "text": "The quote for an auto insurance for make Toyota model Camary and year 2015 with an american name and address is $265/month. Coverage includes: Comprehensive Coverage, Collision Coverage, Personal Injury Protection, 24/7 Roadside Assistance",
+              "success": true
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "is_done": true,
+          "success": true,
+          "extracted_content": "The quote for an auto insurance for make Toyota model Camary and year 2015 with an american name and address is $265/month. Coverage includes: Comprehensive Coverage, Collision Coverage, Personal Injury Protection, 24/7 Roadside Assistance",
+          "include_in_memory": false
+        }
+      ],
+      "state": {
+        "tabs": [
+          {
+            "page_id": 0,
+            "url": "http://localhost:3001/quote-info",
+            "title": "Insurance Quote Application"
+          }
+        ],
+        "interacted_element": [
+          null
+        ],
+        "url": "http://localhost:3001/quote-info",
+        "title": "Insurance Quote Application"
+      },
+      "metadata": {
+        "step_start_time": 1740575949.2675033,
+        "step_end_time": 1740575953.7958126,
+        "input_tokens": 4018,
+        "step_number": 8
+      }
+    }
+  ]
+}
