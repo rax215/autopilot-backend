@@ -24,7 +24,7 @@ async def handle_post():
             }), HTTPStatus.BAD_REQUEST
             
         # Log incoming requests
-        logger.info(f"Received request with data: {data}")
+       # logger.info(f"Received request with data: {data}")
         
         # Process the data asynchronously
         result = await process_data(data)

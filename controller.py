@@ -6,6 +6,7 @@ from flask import jsonify
 from util.util import get_llm
 from util.history_cleaner import clean_history
 from util.code_generator import generate_typescript_code
+from util.llm_prompt import llm_interation
 
 # Configure logging
 logging.basicConfig(level=logging.ERROR)
@@ -21,12 +22,15 @@ async def process_data(data):
         return jsonify({"error": "Missing apiKey"}), 400
 
     llm = await get_llm(data['llmProvider'], data['model'], data['apiKey'])
-    history_file = await execute_agent(data['prompt'], llm)
-    playwrightscript =  await generate_testcase(data['prompt'], llm, history_file)
-    return {
+    if(data.get('generatePlaywrightScript') == True):
+        history_file = await execute_agent(data['prompt'], llm)
+        playwrightscript =  await generate_testcase(data['prompt'], llm, history_file)
+        return {
         "generatedScript": playwrightscript        
-    }
-
+        }
+    else:
+        resp = await llm_interation(data['prompt'], llm)
+        return {"response": resp}
 
 
 async def execute_agent(prompt, llm):
